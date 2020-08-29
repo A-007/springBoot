@@ -1,2 +1,2 @@
 # springBoot
-spring boot projects
+spring boot project of TODO app.
