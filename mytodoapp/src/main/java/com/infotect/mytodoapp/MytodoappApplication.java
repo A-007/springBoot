@@ -17,7 +17,7 @@ public class MytodoappApplication {
 
 	public static void main(String[] args) throws UnsupportedEncodingException {
 		
-		String url = "mongodb+srv://Akshay123:Mongodb%402020@cluster0.hmpo1.mongodb.net/ToDoAppDB?retryWrites=true&w=majority";
+		String url = "mongodb+srv://Akshay123:akshay123@cluster0.hmpo1.mongodb.net/ToDoAppDB?retryWrites=true&w=majority";
 
 //		byte [] bytes = url.getBytes(StandardCharsets.UTF_8);
 //		
