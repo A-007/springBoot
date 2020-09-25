@@ -7,7 +7,6 @@ import java.util.Objects;
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 
-import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.validation.annotation.Validated;
 
@@ -23,9 +22,6 @@ import io.swagger.annotations.ApiModelProperty;
 
 @Document(collection = "Users")
 public class User {
-	@JsonProperty("id")
-	@Id
-	private Long id = null;
 
 	@JsonProperty("username")
 	private String username = null;
@@ -48,26 +44,6 @@ public class User {
 	@JsonProperty("tasks")
 	@Valid
 	private List<Task> tasks = null;
-
-	public User id(Long id) {
-		this.id = id;
-		return this;
-	}
-
-	/**
-	 * Get id
-	 * 
-	 * @return id
-	 **/
-	@ApiModelProperty(value = "")
-
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
 
 	public User username(String username) {
 		this.username = username;
@@ -229,15 +205,15 @@ public class User {
 			return false;
 		}
 		User user = (User) o;
-		return Objects.equals(this.id, user.id) && Objects.equals(this.username, user.username)
-				&& Objects.equals(this.firstName, user.firstName) && Objects.equals(this.lastName, user.lastName)
-				&& Objects.equals(this.email, user.email) && Objects.equals(this.password, user.password)
-				&& Objects.equals(this.phone, user.phone) && Objects.equals(this.tasks, user.tasks);
+		return Objects.equals(this.username, user.username) && Objects.equals(this.firstName, user.firstName)
+				&& Objects.equals(this.lastName, user.lastName) && Objects.equals(this.email, user.email)
+				&& Objects.equals(this.password, user.password) && Objects.equals(this.phone, user.phone)
+				&& Objects.equals(this.tasks, user.tasks);
 	}
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(id, username, firstName, lastName, email, password, phone, tasks);
+		return Objects.hash(username, firstName, lastName, email, password, phone, tasks);
 	}
 
 	@Override
@@ -245,7 +221,6 @@ public class User {
 		StringBuilder sb = new StringBuilder();
 		sb.append("class User {\n");
 
-		sb.append("    id: ").append(toIndentedString(id)).append("\n");
 		sb.append("    username: ").append(toIndentedString(username)).append("\n");
 		sb.append("    firstName: ").append(toIndentedString(firstName)).append("\n");
 		sb.append("    lastName: ").append(toIndentedString(lastName)).append("\n");
