@@ -8,4 +8,5 @@ import com.infotect.mytodoapp.model.User;
 @Repository
 public interface UserRepository extends MongoRepository<User, Long>{
 
+	User findByEmail(String email);
 }
