@@ -1,12 +1,12 @@
 package com.infotect.mytodoapp.model;
 
+import java.time.LocalDateTime;
 import java.util.Objects;
 
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 
 import org.springframework.validation.annotation.Validated;
-import org.threeten.bp.OffsetDateTime;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -28,10 +28,10 @@ public class Task {
 	private String name = null;
 
 	@JsonProperty("start_date")
-	private OffsetDateTime startDate = null;
+	private LocalDateTime startDate = null;
 
 	@JsonProperty("end_date")
-	private OffsetDateTime endDate = null;
+	private LocalDateTime endDate = null;
 
 	/**
 	 * task status in the store
@@ -108,7 +108,7 @@ public class Task {
 		this.name = name;
 	}
 
-	public Task startDate(OffsetDateTime startDate) {
+	public Task startDate(LocalDateTime startDate) {
 		this.startDate = startDate;
 		return this;
 	}
@@ -122,15 +122,15 @@ public class Task {
 	@NotNull
 
 	@Valid
-	public OffsetDateTime getStartDate() {
+	public LocalDateTime getStartDate() {
 		return startDate;
 	}
 
-	public void setStartDate(OffsetDateTime startDate) {
+	public void setStartDate(LocalDateTime startDate) {
 		this.startDate = startDate;
 	}
 
-	public Task endDate(OffsetDateTime endDate) {
+	public Task endDate(LocalDateTime endDate) {
 		this.endDate = endDate;
 		return this;
 	}
@@ -143,11 +143,11 @@ public class Task {
 	@ApiModelProperty(value = "")
 
 	@Valid
-	public OffsetDateTime getEndDate() {
+	public LocalDateTime getEndDate() {
 		return endDate;
 	}
 
-	public void setEndDate(OffsetDateTime endDate) {
+	public void setEndDate(LocalDateTime endDate) {
 		this.endDate = endDate;
 	}
 
