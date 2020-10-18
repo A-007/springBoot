@@ -45,7 +45,7 @@ public class UserController {
 //			return new ResponseEntity<>(userRepository.save(request), HttpStatus.CREATED);
 //		} else {
 //
-			return new ResponseEntity<>("User already exists", HttpStatus.NOT_ACCEPTABLE);
+		return new ResponseEntity<>("User already exists", HttpStatus.NOT_ACCEPTABLE);
 //		}
 	}
 

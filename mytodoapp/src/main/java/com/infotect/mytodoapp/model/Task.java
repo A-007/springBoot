@@ -21,8 +21,6 @@ import io.swagger.annotations.ApiModelProperty;
 @javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2020-09-06T05:30:55.838Z[GMT]")
 
 public class Task {
-	@JsonProperty("id")
-	private Long id = null;
 
 	@JsonProperty("name")
 	private String name = null;
@@ -66,26 +64,6 @@ public class Task {
 
 	@JsonProperty("status")
 	private StatusEnum status = null;
-
-	public Task id(Long id) {
-		this.id = id;
-		return this;
-	}
-
-	/**
-	 * Get id
-	 * 
-	 * @return id
-	 **/
-	@ApiModelProperty(value = "")
-
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
 
 	public Task name(String name) {
 		this.name = name;
@@ -180,14 +158,14 @@ public class Task {
 			return false;
 		}
 		Task task = (Task) o;
-		return Objects.equals(this.id, task.id) && Objects.equals(this.name, task.name)
+		return  Objects.equals(this.name, task.name)
 				&& Objects.equals(this.startDate, task.startDate) && Objects.equals(this.endDate, task.endDate)
 				&& Objects.equals(this.status, task.status);
 	}
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(id, name, startDate, endDate, status);
+		return Objects.hash( name, startDate, endDate, status);
 	}
 
 	@Override
@@ -195,7 +173,6 @@ public class Task {
 		StringBuilder sb = new StringBuilder();
 		sb.append("class Task {\n");
 
-		sb.append("    id: ").append(toIndentedString(id)).append("\n");
 		sb.append("    name: ").append(toIndentedString(name)).append("\n");
 		sb.append("    startDate: ").append(toIndentedString(startDate)).append("\n");
 		sb.append("    endDate: ").append(toIndentedString(endDate)).append("\n");
